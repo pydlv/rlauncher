@@ -28,11 +28,13 @@ except FileNotFoundError:
 	print("Could not locate any versions of Roblox. Please make sure it's installed.");
 	sys.exit(1);
 
-dirNames.sort(key=lambda n: int(n.split("-")[1], 16));
+dirNames.sort(key=lambda n: -int(n.split("-")[1], 16));
 
 if(len(dirNames) < 1):
 	print("Could not locate any versions of Roblox. Please make sure it's installed.");
 	sys.exit(1);
+
+print(dirNames);
 
 robloxPath = versionsPath + "/" + dirNames[0];
 
